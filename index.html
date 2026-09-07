@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi sitio Personal</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="#inicio">Inicio</a></li>
+                <li> <a href="#sobremi">Sobre mi</a></li>
+                <li> <a href="#proyecto">Proyectos</a></li>
+                <li> <a href="#contacto">Contacto</a></li>
+                <li> <a href="#referencia">Referencias/Calificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <h1>Emmanuel Duarte</h1>
+            <h2>Frontend Developer</h2>
+            <p>Bienvenido a mi sitio web</p>
+            <p>Te contare un poco sobre mi y mis conocimientos</p>
+            <img class="foto" src="./img/yo.png" alt="Foto introductoria">
+        </section>
+        <section id="sobremi">
+            <p>Soy un desarrollador con años de experiencia</p>
+            <p>Me considero una persona pro activa, participativa y con buen desarrollo para trabajar en equipo</p>
+            <img class="foto" src="./img/yo2.png" alt="Foto personal">
+            <h3>Conocimientos</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>React</li>
+                <li>Manejo de Api</li>
+            </ul>
+            <blockquote>
+                <p>No documentes el problema; arréglalo</p>
+                <footer>Atli Björgvin Oddsson</footer>
+            </blockquote>
+        </section>
+        <section id="proyecto">
+            <article>
+                <h1>Calculadora</h1>
+                <p>Este proyecto es un trabajo practico que se me pidio armar una calculadora online totalmente
+                    funcional</p>
+                    <img src="./img/calculadora 2.jpg" alt="Calculadora">
+                <a href="https://emmaduarte.github.io/Calculadora/">
+                ver demo
+                </a>
+                <p>Tecnologias usadas</p>
+                <ul>
+                    <li>Html</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+            </article>
+            <article>
+                <h1>Movie</h1>
+                <p>Este proyecto fue un desafio en un curso de React que se me pidio armar una pagina web de peliculas y
+                    series, consumiendo una api y hacerla funcinal</p>
+                <img src="./img/movieplus.jpg" alt="Proyecto Peliculas">
+                <a href="https://emmaduarte.github.io/movies/">
+                    ver demo
+                </a>
+                <p>Tecnologias usadas</p>
+                <ul>
+                    <li>Html</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Manejo de Api</li>
+                </ul>
+            </article>
+            <article>
+                <h1>Naturel Gourmet</h1>
+                <p>Este proyecto es un trabajo para un cliente real, que junto con un equipo de trabajo realizamos una
+                    nueva version de su pagina web para su negocio</p>
+                <img src="./img/naturel.png" alt="Proyecto Naturel Gourmet">
+                    <a href="https://naturel-gourmet.vercel.app/">
+                        ver demo
+                    </a>
+
+                <p>Tecnologias usadas</p>
+                <ul>
+                    <li>Html</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Versel</li>
+                </ul>
+            </article>
+        </section>
+        <section id="contacto">
+            <h2>Contactame</h2>
+            <h4>Coreo</h4>
+            <h5>emma.ale.duarte@gmail.com</h5>
+            <a href="mailto:emma.ale.duarte@gmail.com" target="_blank">Enviar mensaje</a>
+            <h4>Whatsapp</h4>
+            <h5>+5492645656548</h5>
+            <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank">Enviar mensaje</a>
+            <h4>Telegram</h4>
+            <h5>emmaDuarte14</h5>
+            <a href="https://t.me/emmaDuarte14" target="_blank">Enviar mensaje</a>
+
+
+            <form ref={form}>
+                <input type="text" name='name' placeholder='Nombre Completo' required />
+                <label for="name">Nombre Completo</label>
+                <input type="email" name='email' placeholder='Correo' required />
+                <label for="email">Email</label>
+                <input type="tel" name="telefono" placeholder="Telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4} title="
+                    Formato: 123-456-7890"" required />
+                <label for="telefono">Telefono</label>
+                <textarea name="message" rows="7" placeholder='Mensaje'></textarea>
+                <input type="radio" id="opcion1" name="emailO" value="email">
+                <label for="emailO">Email</label>
+                <input type="radio" id="opcion2" name="telefono" value="telefono">
+                <label for="telefono">Telefono</label>
+                <input type="radio" id="opcion3" name="whatsapp" value="whatsapp">
+                <label for="whatsapp">Whatsapp</label>
+                <label for="submit"></label>
+                <input type="submit" id="submit" value="Enviar">
+                <input type="reset" value="Limpiar">
+            </form>
+
+        </section>
+        <section id="referencia">
+            <blockquote>
+                Testimonio 1
+            </blockquote>
+            <blockquote>
+                Testimonio 2
+            </blockquote>
+        </section>
+    </main>
+    <footer>
+        <p>Emmanuel Duarte</p>
+        <p>emma.ale.duarte@gmail.com</p>
+        <p>Instagram: emma.alee</p>
+        <p>Github: emmaduarte</p>
+        <h5>Whatsapp</h5>
+        <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank">+5492645656548</a>
+        <p>2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

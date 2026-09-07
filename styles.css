@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    
+}
+:root {
+  --color-1: #0d1b2a;
+  --color-2: #1b263b;
+  --color-3: #415a77;
+  --color-4: #e0e1dd;
+  --color-5: #ff5d5d;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-4);
+    color: black;
+    line-height: 1.7;
+    text-align: center;
+    
+}
+
+article a{
+    text-decoration: none;  
+    font-size: 25px;
+    background-color: #ff5d5d;
+    border-radius: 20%;
+}
+a :hover{
+    background-color: #415a77;
+}
+nav{
+    background: var(--color-1);
+    width: 100%;
+    padding: 0.7rem 1.7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    border-radius: 3rem;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: var(--color-3);
+}
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+}
+nav ul li{
+    padding: 10px 15px;
+    text-align: center;
+}
+nav ul :hover{
+    background-color: #415a77;
+    border-radius: 10%;
+}
+nav ul li a{
+    color: var(--color-4);
+    text-decoration: none;
+}
+h1 h2 {
+    padding: 10px 0
+}
+p{
+    padding: 15px;
+}
+.foto{
+    height: 35%;
+    width: 25%;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+#inicio{
+    margin: 10px 1rem;
+    padding: 5rem 1rem;
+    
+}
+#sobremi{
+    margin: 10px 1rem;
+    padding: 5rem 1rem;
+
+}
+#proyecto{
+    margin: 10px 1rem;
+    padding: 5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#proyecto img{
+    width: 100%;
+
+}
+article{
+    border: 1px solid var(--color-5);
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px var(--color-5);
+    margin: 0 1rem;
+    padding: 10px;
+}
+#contacto{
+    margin: 10px 1rem;
+    padding: 5rem 1rem;
+
+}
+#referencia{
+    margin: 10px 1rem;
+    padding: 5rem 1rem;
+
+}
+
+
+
+@media only screen and (max-width: 768px) { 
+    body { 
+        display: grid;
+        grid-template-columns: 100%;
+    } 
+    nav{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    nav ul{
+        grid-template-columns: repeat(1, auto);
+    }
+    #proyecto{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding: 30px;
+        margin: 10px 30px;
+    }
+    article{
+        margin-top: 20px;
+        padding: 10px 25px;
+    }
+    .foto{
+        height: 50%;
+        width: 50%;
+    }
+}
