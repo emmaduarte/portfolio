@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi sitio Personal</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <script src="script.js" defer></script>
 </head>
 
-<body>
+<body id="cuerpo">
     <header>
-        <nav>
+        <nav aria-label="Navegacion principal">
             <ul>
                 <li> <a href="#inicio">Inicio</a></li>
                 <li> <a href="#sobremi">Sobre mi</a></li>
@@ -19,41 +19,63 @@
                 <li> <a href="#contacto">Contacto</a></li>
                 <li> <a href="#referencia">Referencias/Calificaciones</a></li>
             </ul>
+            <button id="claro-oscuro" type="button" aria-label="Cambiar a modo oscuro">
+                <img id="sol" 
+                width="24" 
+                height="24" 
+                src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-sun-summer-tanah-basah-basic-outline-tanah-basah.png" 
+                alt="Modo Claro"/>
+                <img id="luna" hidden 
+                width="24" 
+                height="24" 
+                src="https://img.icons8.com/external-others-inmotus-design/67/external-Night-Mode-round-icons-others-inmotus-design-3.png" 
+                alt="Modo Oscuro"/>
+            </button>
         </nav>
     </header>
     <main>
         <section id="inicio">
-            <h1>Emmanuel Duarte</h1>
-            <h2>Frontend Developer</h2>
-            <p>Bienvenido a mi sitio web</p>
-            <p>Te contare un poco sobre mi y mis conocimientos</p>
-            <img class="foto" src="./img/yo.png" alt="Foto introductoria">
+            <div class="inicio-content">
+                <p class="eyebrow">Frontend Developer</p>
+                <h1>Emmanuel Duarte</h1>
+                <p>Desarrollo experiencias web modernas, funcionales y adaptadas a las necesidades de cada proyecto.</p>
+                <p>Me especializo en transformar ideas en interfaces claras, atractivas y fáciles de usar.</p>
+                <div class="inicio-actions">
+                    <a href="#proyecto">Ver proyectos</a>
+                    <a href="#contacto">Contactarme</a>
+                </div>
+            </div>
+            <img class="foto foto-inicio" src="./img/yo.png" alt="Foto introductoria">
         </section>
         <section id="sobremi">
-            <p>Soy un desarrollador con años de experiencia</p>
-            <p>Me considero una persona pro activa, participativa y con buen desarrollo para trabajar en equipo</p>
-            <img class="foto" src="./img/yo2.png" alt="Foto personal">
-            <h3>Conocimientos</h3>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-                <li>React</li>
-                <li>Manejo de Api</li>
-            </ul>
-            <blockquote>
-                <p>No documentes el problema; arréglalo</p>
-                <footer>Atli Björgvin Oddsson</footer>
-            </blockquote>
+            <img class="foto foto-personal" id="foto-personal" src="./img/yo2.png" alt="Foto personal">
+            <div class="sobremi-content">
+                <p class="eyebrow">Perfil profesional</p>
+                <h2>Sobre mí</h2>
+                <p>Soy desarrollador frontend y me interesa crear soluciones digitales que combinen un diseño cuidado con un código ordenado, accesible y eficiente.</p>
+                <p>Trabajo con HTML, CSS, JavaScript y React para construir sitios web responsive e integrar APIs. Me caracterizo por ser una persona proactiva, responsable y colaborativa, con ganas de seguir aprendiendo y de aportar valor en cada proyecto.</p>
+                <h3>Conocimientos</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Manejo de Api</li>
+                </ul>
+                <blockquote>
+                    <p>No documentes el problema; arréglalo</p>
+                    <footer>Atli Björgvin Oddsson</footer>
+                </blockquote>
+            </div>
         </section>
         <section id="proyecto">
             <article>
-                <h1>Calculadora</h1>
+                <h3>Calculadora</h3>
                 <p>Este proyecto es un trabajo practico que se me pidio armar una calculadora online totalmente
                     funcional</p>
                     <img src="./img/calculadora 2.jpg" alt="Calculadora">
-                <a href="https://emmaduarte.github.io/Calculadora/">
-                ver demo
+                <a href="https://emmaduarte.github.io/Calculadora/" target="_blank">
+                Ver demo
                 </a>
                 <p>Tecnologias usadas</p>
                 <ul>
@@ -63,12 +85,12 @@
                 </ul>
             </article>
             <article>
-                <h1>Movie</h1>
+                <h3>Movie</h3>
                 <p>Este proyecto fue un desafio en un curso de React que se me pidio armar una pagina web de peliculas y
                     series, consumiendo una api y hacerla funcinal</p>
                 <img src="./img/movieplus.jpg" alt="Proyecto Peliculas">
-                <a href="https://emmaduarte.github.io/movies/">
-                    ver demo
+                <a href="https://emmaduarte.github.io/movies/" target="_blank">
+                    Ver demo
                 </a>
                 <p>Tecnologias usadas</p>
                 <ul>
@@ -80,12 +102,12 @@
                 </ul>
             </article>
             <article>
-                <h1>Naturel Gourmet</h1>
+                <h3>Naturel Gourmet</h3>
                 <p>Este proyecto es un trabajo para un cliente real, que junto con un equipo de trabajo realizamos una
                     nueva version de su pagina web para su negocio</p>
                 <img src="./img/naturel.png" alt="Proyecto Naturel Gourmet">
-                    <a href="https://naturel-gourmet.vercel.app/">
-                        ver demo
+                    <a href="https://naturel-gourmet.vercel.app/" target="_blank">
+                        Ver demo
                     </a>
 
                 <p>Tecnologias usadas</p>
@@ -100,58 +122,116 @@
         </section>
         <section id="contacto">
             <h2>Contactame</h2>
-            <h4>Coreo</h4>
-            <h5>emma.ale.duarte@gmail.com</h5>
-            <a href="mailto:emma.ale.duarte@gmail.com" target="_blank">Enviar mensaje</a>
-            <h4>Whatsapp</h4>
-            <h5>+5492645656548</h5>
-            <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank">Enviar mensaje</a>
-            <h4>Telegram</h4>
-            <h5>emmaDuarte14</h5>
-            <a href="https://t.me/emmaDuarte14" target="_blank">Enviar mensaje</a>
+            <div class="contact-info">
+                <p>¿Tenés una idea o un proyecto en mente? Escribime y conversemos sobre cómo puedo ayudarte.</p>
+                <div class="contact-method">
+                    <h3>Correo</h3>
+                    <p>emma.ale.duarte@gmail.com</p>
+                    <a href="mailto:emma.ale.duarte@gmail.com">Enviar mensaje</a>
+                </div>
+                <div class="contact-method">
+                    <h3>Whatsapp</h3>
+                    <p>+5492645656548</p>
+                    <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank" rel="noopener noreferrer">Enviar mensaje</a>
+                </div>
+                <div class="contact-method">
+                    <h3>Telegram</h3>
+                    <p>emmaDuarte14</p>
+                    <a href="https://t.me/emmaDuarte14" target="_blank" rel="noopener noreferrer">Enviar mensaje</a>
+                </div>
+            </div>
 
+            <form>
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Nombre completo" required>
 
-            <form ref={form}>
-                <input type="text" name='name' placeholder='Nombre Completo' required />
-                <label for="name">Nombre Completo</label>
-                <input type="email" name='email' placeholder='Correo' required />
-                <label for="email">Email</label>
-                <input type="tel" name="telefono" placeholder="Telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4} title="
-                    Formato: 123-456-7890"" required />
+                <label for="email">Correo</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="Correo" required>
+
                 <label for="telefono">Telefono</label>
-                <textarea name="message" rows="7" placeholder='Mensaje'></textarea>
-                <input type="radio" id="opcion1" name="emailO" value="email">
-                <label for="emailO">Email</label>
-                <input type="radio" id="opcion2" name="telefono" value="telefono">
-                <label for="telefono">Telefono</label>
-                <input type="radio" id="opcion3" name="whatsapp" value="whatsapp">
-                <label for="whatsapp">Whatsapp</label>
-                <label for="submit"></label>
-                <input type="submit" id="submit" value="Enviar">
-                <input type="reset" value="Limpiar">
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="123-456-7890"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Formato: 123-456-7890" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="7" autocomplate="off" placeholder="Mensaje"></textarea>
+
+                <fieldset>
+                    <legend>Metodo de contacto preferido</legend>
+                    <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+                    <label for="contact-email">Email</label>
+                    <input type="radio" id="contact-phone" name="contact-method" value="telefono">
+                    <label for="contact-phone">Telefono</label>
+                    <input type="radio" id="contact-whatsapp" name="contact-method" value="whatsapp">
+                    <label for="contact-whatsapp">Whatsapp</label>
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpiar</button>
             </form>
 
         </section>
         <section id="referencia">
-            <blockquote>
-                Testimonio 1
-            </blockquote>
-            <blockquote>
-                Testimonio 2
-            </blockquote>
+            <h2>Referencias</h2>
+            <p>Comentarios de ejemplo pendientes de confirmacion.</p>
+            <button id="toggle-testimonials" class="toggle-testimonials" type="button" aria-expanded="true"
+                aria-controls="testimonials-list">
+                Ocultar referencias
+            </button>
+
+            <div id="testimonials-list" class="testimonials-list">
+                <blockquote>
+                    <button id="ver-testimonio1" class="ver-testimonio" type="button" aria-expanded="false"
+                        aria-controls="testimonio-descripcion1">Ver testimonio
+                    </button>
+                    <p id="testimonio-descripcion1" class="testimonio-descripcion" hidden>"Emmanuel logro transformar nuestras ideas en una pagina clara, moderna y facil de usar. Siempre estuvo dispuesto a escuchar sugerencias y aportar soluciones."</p>
+                    <footer>
+                        <strong>Ana Vera</strong>
+                        <span>Cliente de Naturel Gourmet - Referencia demostrativa</span>
+
+                    </footer>
+                </blockquote>
+
+                <blockquote>
+                    <button id="ver-testimonio2" class="ver-testimonio" type="button" aria-expanded="false"
+                        aria-controls="testimonio-descripcion2">Ver testimonio
+                    </button>
+                    <p id="testimonio-descripcion2" class="testimonio-descripcion" hidden>"Trabajar con Emmanuel fue una experiencia muy positiva. Se destaco por su responsabilidad, comunicacion y capacidad para resolver problemas durante el desarrollo."</p>
+                    <footer>
+                        <strong>Prieto Ruggeri</strong>
+                        <span>Companero de equipo - Referencia demostrativa</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote>
+                    <button id="ver-testimonio3" class="ver-testimonio" type="button" aria-expanded="false"
+                        aria-controls="testimonio-descripcion3">Ver testimonio
+                    </button>
+                    <p id="testimonio-descripcion3" class="testimonio-descripcion" hidden>"Demostro interes por aprender nuevas herramientas y aplicar buenas practicas para mejorar sus proyectos frontend."</p>
+                    <footer>
+                        <strong>Joaquin Quiroga</strong>
+                        <span>Profesor de programacion - Referencia demostrativa</span>
+                    </footer>
+                </blockquote>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>Emmanuel Duarte</p>
-        <p>emma.ale.duarte@gmail.com</p>
-        <p>Instagram: emma.alee</p>
-        <p>Github: emmaduarte</p>
-        <h5>Whatsapp</h5>
-        <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank">+5492645656548</a>
-        <p>2026</p>
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <strong>Emmanuel Duarte</strong>
+            <span>Frontend Developer</span>
+        </div>
+        <address>
+            <a href="mailto:emma.ale.duarte@gmail.com">emma.ale.duarte@gmail.com</a>
+            <a href="https://instagram.com/emma.alee" target="_blank" rel="noopener noreferrer">Instagram: @emma.alee</a>
+            <a href="https://github.com/emmaduarte" target="_blank" rel="noopener noreferrer">GitHub: emmaduarte</a>
+            <a href="https://api.whatsapp.com/send?phone=5492645656548" target="_blank" rel="noopener noreferrer">WhatsApp: +5492645656548</a>
+        </address>
+        <small id="copyright"></small>
     </footer>
 
-    <script src="script.js"></script>
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver al inicio">
+        ↑
+    </button>
 
 </body>
 
