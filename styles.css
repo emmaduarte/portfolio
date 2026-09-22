@@ -235,6 +235,9 @@ article h3{
 article p{
     padding: 0;
 }
+article > p:first-of-type{
+    height: 5rem;
+}
 article a{
     align-self: flex-start;
     padding: 0.5rem 1rem;
