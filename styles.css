@@ -574,8 +574,20 @@ article ul li{
 .feedback-dialog[data-type="success"]{
     border-top-color: #55bd86;
 }
+.feedback-dialog[data-type="success"] > div > p:first-child{
+    color: #55bd86;
+}
+.feedback-dialog[data-type="info"]{
+    border-top-color: #e2ef2c;
+}
+.feedback-dialog[data-type="info"] > div > p:first-child{
+    color: #e2ef2c;
+}
 .feedback-dialog[data-type="error"]{
     border-top-color: var(--color-5);
+}
+.feedback-dialog[data-type="error"] > div > p:first-child{
+    color: var(--color-5);
 }
 .back-to-top{
     position: fixed;

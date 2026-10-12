@@ -118,7 +118,7 @@ contactoForm.addEventListener("submit", async (event) => {
 
 	setTimeout(() => {
 		controlador.abort(); //Cancela la peticion a los 5s
-	}, 5000);
+	}, 50000);
 
 	// Obtiene los valores de los campos del formulario y 
 	// elimina espacios en blanco al inicio y al final
@@ -130,7 +130,7 @@ contactoForm.addEventListener("submit", async (event) => {
     'input[name="contact-method"]:checked')?.value;
 
 	if (!nombre || !email || !mensaje || !telefono || !metodoContacto) {
-		mostrarAviso("Por favor, completá los campos del formulario.", "error");
+		mostrarAviso("Por favor, completá los campos del formulario.", "info");
 		return;
 	}	
   try {
