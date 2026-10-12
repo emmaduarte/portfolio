@@ -24,13 +24,36 @@ const controlador = new AbortController();
 // Actualizar el año en el copyright
 copyright.textContent = `© ${currentYear} Emmanuel Duarte. Todos los derechos reservados.`;
 
+// Elementos para el manejo de Modal
+const feedbackDialog = document.getElementById("feedback-dialog");
+const feedbackType = document.getElementById("feedback-type");
+const feedbackTitle = document.getElementById("feedback-title");
+const feedbackMessage = document.getElementById("feedback-message");
+const closeFeedbackDialogButton = document.getElementById("close-feedback-dialog");
+
+const mostrarAviso = (mensaje, tipo = "info") => {
+	const titulos = {
+		info: "Aviso",
+		success: "Completado",
+		error: "No se pudo completar"
+	};
+
+	feedbackType.textContent = tipo === "success" ? "Éxito" : tipo === "error" ? "Atención" : "Aviso";
+	feedbackTitle.textContent = titulos[tipo] || titulos.info;
+	feedbackMessage.textContent = mensaje;
+	feedbackDialog.dataset.type = tipo;
+	feedbackDialog.showModal();
+};
+
+closeFeedbackDialogButton.addEventListener("click", () => {
+	feedbackDialog.close();
+});
+
 // Funcionalidad del botón "Volver arriba"
 const updateBackToTopVisibility = () => {
 	backToTopButton.classList.toggle("is-visible", window.scrollY > 400);
 };
-
 window.addEventListener("scroll", updateBackToTopVisibility);
-
 backToTopButton.addEventListener("click", () => {
 	window.scrollTo({
 		top: 0,
@@ -44,7 +67,7 @@ backToTopImage.addEventListener("click", () => {
 	contador++;
 
 	if (contador === 10) {
-		alert("¡Felicidades! Has encontrado el secreto 🎉");
+		mostrarAviso("¡Felicidades! Has encontrado el secreto.", "success");
 		contador = 0;
 	}
 });
@@ -89,8 +112,6 @@ document.querySelectorAll(".ver-testimonio").forEach((button) => {
 });
 
 // Funcionalidad del formulario de contacto
-
-
 contactoForm.addEventListener("submit", async (event) => {
 	// Evita el comportamiento por defecto del formulario
 	event.preventDefault();
@@ -109,7 +130,7 @@ contactoForm.addEventListener("submit", async (event) => {
     'input[name="contact-method"]:checked')?.value;
 
 	if (!nombre || !email || !mensaje || !telefono || !metodoContacto) {
-		alert("Por favor, completa todos los campos del formulario.");
+		mostrarAviso("Por favor, completá los campos del formulario.", "error");
 		return;
 	}	
   try {
@@ -121,13 +142,13 @@ contactoForm.addEventListener("submit", async (event) => {
 			contactMethod: metodoContacto
         });
 		contactoForm.reset();
-        alert("Formulario enviado con éxito." || resultado.message);
+		mostrarAviso("Formulario enviado con éxito.", "success");
     } catch (error) {
         if (error.name === "AbortError") {
-	console.log("El recurso fue cancelado por un timeout");
+	mostrarAviso("La solicitud tardó demasiado. Intentá enviarla nuevamente.", "error");
   } else {
 	console.error("Fetch error:", error);
-	alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+	mostrarAviso("Hubo un error al enviar el formulario. Por favor, intentá de nuevo.", "error");
 	}
     }
 });

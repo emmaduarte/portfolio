@@ -149,8 +149,8 @@
                 <input type="email" id="email" name="email" autocomplete="email" placeholder="Correo" required>
 
                 <label for="telefono">Telefono</label>
-                <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="123-456-7890"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Formato: 123-456-7890" required>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="0264-4567890"
+                    pattern="[0-9]{4}-[0-9]{7}" title="Formato: 0123-4567890" required>
 
                 <label for="message">Mensaje</label>
                 <textarea id="message" name="message" rows="7" autocomplete="off" placeholder="Mensaje"></textarea>
@@ -228,6 +228,16 @@
         </address>
         <small id="copyright"></small>
     </footer>
+
+    <dialog class="feedback-dialog" id="feedback-dialog" aria-labelledby="feedback-title"
+        aria-describedby="feedback-message">
+        <div class="feedback-dialog__content">
+            <p class="feedback-dialog__eyebrow" id="feedback-type">Aviso</p>
+            <h2 id="feedback-title">Mensaje</h2>
+            <p id="feedback-message"></p>
+            <button id="close-feedback-dialog" type="button" autofocus>Entendido</button>
+        </div>
+    </dialog>
 
     <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver al inicio">
         ↑
